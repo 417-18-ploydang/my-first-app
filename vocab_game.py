@@ -99,11 +99,11 @@ ans2 = st.text_input(
 )
 ans3 = st.text_input(
     "ข้อ 3: Look at me I'm a `s t _ r _ _ b e _ _ y`. 🍓",
-    value=st.session_state.ans2_val,
+    value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
     "ข้อ 4: May I borrow your `p _ _c _ l`. ✏️",
-    value=st.session_state.ans2_val,
+    value=st.session_state.ans4_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
@@ -126,4 +126,4 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2, ans3, ans4)
 
 st.divider()
-st.write("นางสาวพลอยแดง บุญชี เลขที่ 18 ม.4/")
+st.write("นางสาวพลอยแดง บุญชี เลขที่ 18 ม.4/17")
