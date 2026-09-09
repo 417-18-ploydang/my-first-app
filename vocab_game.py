@@ -17,8 +17,8 @@ if "ans4_val" not in st.session_state:
 def reset_game():
     st.session_state.ans1_val = ""  # เคลียร์ค่าช่องข้อ 1
     st.session_state.ans2_val = ""  # เคลียร์ค่าช่องข้อ 2
-    st.session_state.ans1_val = ""  # เคลียร์ค่าช่องข้อ 3
-    st.session_state.ans1_val = ""  # เคลียร์ค่าช่องข้อ 4
+    st.session_state.ans3_val = ""  # เคลียร์ค่าช่องข้อ 3
+    st.session_state.ans4_val = ""  # เคลียร์ค่าช่องข้อ 4
     st.session_state.start = time.time()  # เริ่มเวลาใหม่
     st.session_state.is_ended = False  # ปิด Dialog
 
@@ -27,7 +27,7 @@ def reset_game():
 # 📌 ฟังก์ชัน MessageBox (Dialog)
 # ----------------------------------------------------
 @st.dialog("📊 สรุปผลการเล่นเกม")
-def show_result_dialog(ans1, ans2):
+def show_result_dialog(ans1, ans2, ans3, ans4):
     st.balloons()
     score = 0
 
@@ -63,7 +63,7 @@ def show_result_dialog(ans1, ans2):
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
 
     if score == 4:
         st.success("🎉 You win!")
@@ -109,8 +109,8 @@ ans4 = st.text_input(
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
-st.session_state.ans1_val = ans3
-st.session_state.ans1_val = ans4
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
 
 # 4. ปุ่มส่งคำตอบ
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
