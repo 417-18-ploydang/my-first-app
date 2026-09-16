@@ -59,7 +59,7 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
   # ตรวจข้อ 4
-    if u_ans4 == "Pencil":
+    if u_ans4 == "pencil":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
@@ -98,7 +98,7 @@ ans2 = st.text_input(
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: Look at me I'm a `s t _ r _ _ b e _ _ y`. 🍓",
+    "ข้อ 3: Look at me I'm a `s t r _ _ b e _ _ y`. 🍓",
     value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
